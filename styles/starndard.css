@@ -1,0 +1,23 @@
+* {
+  margin: 0;
+  scroll-behavior: smooth;
+}
+
+.center-content {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.max-width-1440px {
+  width: 100%;
+  max-width: 1440px;
+}
+
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
