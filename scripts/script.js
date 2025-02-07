@@ -11,6 +11,7 @@
 // Bestellen-Button: Meldung, dass Bestellung vorgenommen wurde; kein Alert!. Leerung des Warenkorbs.
 // Auch wenn alle Gerichte ausgewählt werde, darf der Warenkorb nicht "überlaufen"
 // Der Desktop-Warenkorb sollte immer oben an der Seite angeheftet sein, außer wenn man ganz oben oder zanb unten auf der Seite ist.
+// Meine Präferenz: Warenkorb bekommt eigene Datenstruktur.
 //
 // Code
 // Aussagekräftige Namen für Fkt und Variablen
