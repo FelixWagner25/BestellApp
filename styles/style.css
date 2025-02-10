@@ -1,6 +1,10 @@
+body {
+  font-family: Nunito_Sans;
+}
+
 header {
   background-color: #ff8000;
-  height: 536px;
+  height: 568px;
 }
 
 footer {
@@ -8,8 +12,14 @@ footer {
   height: 160px;
 }
 
-h1 {
-  font-family: Raleway;
+.pd-lr-deflt {
+  padding-left: 16px;
+  padding-right: 16px;
+}
+
+.pd-tb-16px {
+  padding-top: 16px;
+  padding-bottom: 16px;
 }
 
 .logo-img {
@@ -22,4 +32,26 @@ h1 {
   width: 100%;
   height: 480px;
   object-fit: cover;
+}
+
+.store-info {
+  background-color: white;
+}
+
+h1 {
+  font-size: 32px;
+  margin: 0;
+  font-weight: bold;
+}
+
+.store-description {
+  font-size: 16px;
+  padding-bottom: 8px;
+}
+.reviews {
+  color: #ff8000;
+  font-size: 16px;
+}
+
+.nav-bar {
 }
