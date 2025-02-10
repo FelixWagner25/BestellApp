@@ -21,3 +21,11 @@
   margin-right: auto;
   width: 50%;
 }
+
+.d-flex {
+  display: flex;
+}
+
+.d-none {
+  display: none;
+}
