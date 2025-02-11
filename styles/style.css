@@ -4,7 +4,6 @@ body {
 
 header {
   background-color: #ff8000;
-  height: 296px;
 }
 
 footer {
@@ -71,4 +70,21 @@ h1 {
 
 .nav-lnk:hover {
   color: #ff8000;
+}
+
+.content-span {
+  display: flex;
+}
+
+.content {
+  width: calc(100%-320px);
+  flex-grow: 1;
+}
+
+.basket-span {
+  width: 320px;
+}
+
+.basket {
+  height: 100vh;
 }
