@@ -12,8 +12,8 @@ footer {
 }
 
 .pd-lr-deflt {
-  padding-left: 16px;
-  padding-right: 16px;
+  padding-left: 24px;
+  padding-right: 24px;
 }
 
 .pd-tb-16px {
@@ -58,6 +58,7 @@ h1 {
 
 .nav-lnks-flexb {
   display: flex;
+  align-items: center;
   gap: 16px;
 }
 
@@ -70,6 +71,10 @@ h1 {
 
 .nav-lnk:hover {
   color: #ff8000;
+}
+
+.arrow-right-img {
+  height: 24px;
 }
 
 .content-span {
@@ -87,4 +92,11 @@ h1 {
 
 .basket {
   height: 100vh;
+  position: sticky;
+}
+
+.dish-section-img {
+  height: 160px;
+  width: 100%;
+  object-fit: cover;
 }
