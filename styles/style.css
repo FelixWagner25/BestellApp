@@ -16,11 +16,6 @@ footer {
   padding-right: 24px;
 }
 
-.pd-tb-16px {
-  padding-top: 16px;
-  padding-bottom: 16px;
-}
-
 .logo-img {
   height: 40px;
   padding-top: 8px;
@@ -33,10 +28,6 @@ footer {
   object-fit: cover;
 }
 
-.store-info {
-  background-color: white;
-}
-
 h1 {
   font-size: 32px;
   margin: 0;
@@ -47,13 +38,14 @@ h1 {
   font-size: 16px;
   padding-bottom: 8px;
 }
+
 .reviews {
   color: #ff8000;
   font-size: 16px;
 }
 
 .nav-bar {
-  background-color: #f9eee3;
+  background-color: #f6e3d0;
 }
 
 .nav-lnks-flexb {
@@ -65,7 +57,7 @@ h1 {
 .nav-lnk {
   color: rgb(119, 118, 118);
   text-decoration: none;
-  font-size: 16px;
+  font-size: 24px;
   font-weight: bold;
 }
 
@@ -84,6 +76,7 @@ h1 {
 .content {
   width: calc(100%-320px);
   flex-grow: 1;
+  background-color: #f9eee3;
 }
 
 .basket-span {

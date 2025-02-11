@@ -29,3 +29,13 @@
 .d-none {
   display: none;
 }
+
+.pd-tb-16px {
+  padding-top: 16px;
+  padding-bottom: 16px;
+}
+
+.margin-tb-16px {
+  margin-top: 16px;
+  margin-bottom: 16px;
+}
