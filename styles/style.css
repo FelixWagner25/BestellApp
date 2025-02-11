@@ -34,6 +34,11 @@ h1 {
   font-weight: bold;
 }
 
+h2 {
+  font-size: 24px;
+  margin: 0;
+}
+
 .store-description {
   font-size: 16px;
   padding-bottom: 8px;
@@ -76,7 +81,7 @@ h1 {
 .content {
   width: calc(100%-320px);
   flex-grow: 1;
-  background-color: #f9eee3;
+  background-color: #faf4ef;
 }
 
 .basket-span {
@@ -92,4 +97,40 @@ h1 {
   height: 160px;
   width: 100%;
   object-fit: cover;
+}
+
+.dish-tile-span {
+  display: flex;
+  box-sizing: border-box;
+  border: 1px solid grey;
+  border-radius: 12px;
+  background-color: #faf4ef;
+}
+
+.dish-tile {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  flex-grow: 1;
+}
+
+.dish-tile-span:hover {
+  background-color: #f6e3d0;
+}
+
+.dish-title {
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.dish-price {
+  color: #ff8000;
+  font-weight: bold;
+}
+
+.add-dish-img {
+  height: 24px;
+  width: 24px;
+  padding-top: 8px;
+  padding-right: 8px;
 }
