@@ -16,6 +16,15 @@ footer {
   padding-right: 24px;
 }
 
+.pd-l-deflt {
+  padding-left: 20px;
+}
+
+.pd-lr-small {
+  padding-left: 16px;
+  padding-right: 16px;
+}
+
 .logo-img {
   height: 40px;
   padding-top: 8px;
@@ -146,4 +155,30 @@ h2 {
 .add-btn:hover {
   filter: drop-shadow(0px 0px 4px #ffffff);
   transform: scale(1.25);
+}
+
+hr {
+  border: 1px solid black;
+}
+
+.basket-btn-img {
+  height: 16px;
+  width: 16px;
+}
+
+.basket-content {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.basket-add-remove {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.basket-counter {
+  margin-left: 8px;
+  margin-right: 8px;
 }
