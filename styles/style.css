@@ -158,7 +158,7 @@ h2 {
 }
 
 hr {
-  border: 1px solid black;
+  border: 1px solid rgb(197, 197, 197);
 }
 
 .basket-btn-img {
@@ -181,4 +181,31 @@ hr {
 .basket-counter {
   margin-left: 8px;
   margin-right: 8px;
+}
+
+.hr-basket {
+  border: 1px solid rgb(197, 197, 197);
+  margin-left: 8px;
+  margin-right: 8px;
+}
+
+.subtotal-span {
+  display: flex;
+  justify-content: space-between;
+}
+.subtotal {
+  display: flex;
+  flex-direction: column;
+}
+
+.subtotal-amounts {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.total {
+  display: flex;
+  justify-content: space-between;
+  font-weight: bold;
 }
