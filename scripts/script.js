@@ -20,3 +20,16 @@
 // Höchstens 14 Zeilen pro Fkt.
 // Gleicher Abstand zwischen Fkt (1 oder 2 Leerzeichen).
 // Lange HTML-templates ind extra Funktionen
+
+function init() {
+  loadDishes("starter-dishes");
+  loadDishes("main-dishes");
+  loadDishes("dessert-dishes");
+}
+
+function loadDishes(dishesElementId) {
+  let contentRef = document.getElementById(dishesElementId);
+  for (let i = 0; i < starterDishes.length; i++) {
+    contentRef.innerHTML += getDishesTemplate(i, dishesElementId);
+  }
+}

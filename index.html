@@ -1,10 +1,6 @@
 <!-- Funktionalitäten -->
-<!-- Es gibt einen Warenkorb -->
-<!-- Es gibt ein Logo & Name von einem Restaurant-->
+<!-- Es gibt einen Warenkorb der sticky ist-->
 <!-- Es gibt eine Gerichteliste -->
-<!-- Hover-Effekt über Gericht -->
-<!-- Es gibt einen Header und einen Footer-->
-<!-- Restaurant Name, Bewertung, Beschreibung und Informationen zum Lieferpreis sowie Sterne werden statisch angezeigt-->
 <!-- Die ausgewählten Gerichte werden dynamisch über JS aus einem Objekt gerendert-->
 <!-- Es gibt einen Gerichteslider, der zu den jeweiligen Sektionen verlinkt. Es sollte mindestens 3 verschiedene Kategorien geben mit jeweils mindestens 3 Gerichten,
      die sollten von Bilder zur jeweiligen Kategorie getrennt sein-->
@@ -23,13 +19,14 @@
     <link rel="stylesheet" href="./styles/starndard.css" />
     <link rel="stylesheet" href="./styles/style.css" />
     <link rel="stylesheet" href="./styles/assets.css" />
+    <link rel="stylesheet" href="./styles/basket.css" />
     <link rel="icon" href="/assets/icons/favicon.ico" type="image/x-icon" />
     <script src="./scripts/data.js" defer></script>
     <script src="./scripts/template.js" defer></script>
     <script src="./scripts/script.js" defer></script>
     <title>Bestell App</title>
   </head>
-  <body>
+  <body onload="init()">
     <header>
       <div class="max-width-1440px">
         <div class="logo pd-lr-deflt">
@@ -80,7 +77,7 @@
                   alt="Salat mix"
                   class="dish-section-img"
                 />
-                <h2 class="pd-tb-16px">Vorspeisen</h2>
+                <h2 class="pd-t-16px">Vorspeisen</h2>
               </section>
               <section class="main-dishes margin-tb-16px" id="main-dishes">
                 <img
@@ -89,38 +86,6 @@
                   class="dish-section-img"
                 />
                 <h2 class="pd-t-16px">Hauptgerichte</h2>
-                <div class="dish-tile-span pd-l-deflt margin-tb-16px">
-                  <div class="dish-tile pd-tb-16px">
-                    <p class="dish-title">Pizza Vegetaria</p>
-                    <p class="dish-description">
-                      mit Broccoli, Champignons und Oliven
-                    </p>
-                    <p class="dish-price">9,00 EUR</p>
-                  </div>
-                  <button class="add-btn pd">
-                    <img
-                      src="./assets/icons/add.png"
-                      alt="Add"
-                      class="add-dish-img"
-                    />
-                  </button>
-                </div>
-                <div class="dish-tile-span pd-l-deflt margin-tb-16px">
-                  <div class="dish-tile pd-tb-16px">
-                    <p class="dish-title">Pizza Italia</p>
-                    <p class="dish-description">
-                      mit Champignons, Putenschinken und Geflügelsalami
-                    </p>
-                    <p class="dish-price">9,00 EUR</p>
-                  </div>
-                  <button class="add-btn pd">
-                    <img
-                      src="./assets/icons/add.png"
-                      alt="Add"
-                      class="add-dish-img"
-                    />
-                  </button>
-                </div>
               </section>
               <section class="dessert-dishes" id="dessert-dishes">
                 <img
@@ -205,13 +170,13 @@
               <p>Lieferung:</p>
             </div>
             <div class="subtotal-amounts">
-              <p>33 €</p>
-              <p>5 €</p>
+              <p>33,00 €</p>
+              <p>5,00 €</p>
             </div>
           </div>
           <div class="total pd-lr-small">
             <p>Gesamt</p>
-            <p>38 €</p>
+            <p>38,00 €</p>
           </div>
         </div>
       </section>
