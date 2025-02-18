@@ -1,4 +1,4 @@
-function getDishesTemplate(indexDish, arrayElementId) {
+function getDishTemplate(indexDish, arrayElementId) {
   let dishesArray = getArrayByElementId(arrayElementId);
   return `
     <div class="dish-tile-span pd-l-deflt margin-tb-16px">
@@ -11,7 +11,9 @@ function getDishesTemplate(indexDish, arrayElementId) {
               dishesArray[indexDish].price
             )} EUR</p>
         </div>
-        <button class="add-btn pd">
+        <button class="add-btn pd" onclick='addToBasket("${
+          arrayElementId + "_" + indexDish
+        }")'>
         <img
             src="./assets/icons/add.png"
             alt="Add"
@@ -49,4 +51,39 @@ function roundToTowDigets(number) {
 function replaceDotWithComma(decimalDotsStr) {
   let decimalCommaStr = decimalDotsStr.replace(".", ",");
   return decimalCommaStr;
+}
+
+function getBasketDishTemplate(dishObject) {
+  return `
+    <section class="basket-dish pd-lr-small">
+        <h3 class="pd-tb-16px">${dishObject.name}</h3>
+        <div class="basket-content">
+        <div class="basket-add-remove">
+            <button class="basket-btn">
+            <img
+                src="./assets/icons/add.png"
+                alt="plus"
+                class="basket-btn-img"
+            />
+            </button>
+            <span class="basket-counter">${dishObject.quantity} x</span>
+            <button class="basket-btn">
+            <img
+                src="./assets/icons/remove.png"
+                alt="minus"
+                class="basket-btn-img"
+            />
+            </button>
+        </div>
+        <div class="basket-dish-sum">${dishObject.price} €</div>
+        <button class="basket-btn">
+            <img
+            src="./assets/icons/delete.png"
+            alt="trash"
+            class="basket-btn-img"
+            />
+        </button>
+        </div>
+    </section>
+`;
 }

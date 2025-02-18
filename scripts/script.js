@@ -30,6 +30,51 @@ function init() {
 function loadDishes(dishesElementId) {
   let contentRef = document.getElementById(dishesElementId);
   for (let i = 0; i < starterDishes.length; i++) {
-    contentRef.innerHTML += getDishesTemplate(i, dishesElementId);
+    contentRef.innerHTML += getDishTemplate(i, dishesElementId);
   }
 }
+
+function addToBasket(elementId) {
+  let dishObject = getDishObject(elementId);
+
+  if (isContainedInBasket(dishObject) == true) {
+    setCounterUp(dishObject);
+    calculateSums();
+  } else {
+    basketDishes.push(dishObject);
+    setCounterUp(dishObject);
+    putDishToBasket(dishObject);
+    calculateSums();
+  }
+}
+
+function getDishObject(elementId) {
+  let splitElementId = elementId.split("_");
+  let arrayFromElementId = getArrayByElementId(splitElementId[0]);
+  let indexFromElementId = parseInt(splitElementId[1]);
+  let dishObject = arrayFromElementId[indexFromElementId];
+  return dishObject;
+}
+
+function isContainedInBasket(dishObject) {
+  if (basketDishes.includes(dishObject) == true) {
+    return true;
+  } else {
+    return false;
+  }
+}
+
+function putDishToBasket(dishObject) {
+  let basketContentref = document.getElementById("basket-dishes");
+  basketContentref.innerHTML += getBasketDishTemplate(dishObject);
+}
+
+function setCounterUp(elementId) {}
+
+function setCounterDown(elementId) {}
+
+function deleteFromBasket(elementId) {}
+
+function renderBasket() {}
+
+function calculateSums() {}
