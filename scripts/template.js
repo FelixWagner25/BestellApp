@@ -56,7 +56,7 @@ function replaceDotWithComma(decimalDotsStr) {
 function getBasketDishTemplate(dishObject) {
   return `
     <section class="basket-dish pd-lr-small">
-        <h3 class="pd-tb-16px">${dishObject.name}</h3>
+        <h3 class="pd-b-8px pd-t-16px">${dishObject.name}</h3>
         <div class="basket-content">
         <div class="basket-add-remove">
             <button class="basket-btn">
@@ -75,7 +75,9 @@ function getBasketDishTemplate(dishObject) {
             />
             </button>
         </div>
-        <div class="basket-dish-sum">${dishObject.price} €</div>
+        <div class="basket-dish-sum">${getPriceTemplate(
+          dishObject.price
+        )} €</div>
         <button class="basket-btn">
             <img
             src="./assets/icons/delete.png"

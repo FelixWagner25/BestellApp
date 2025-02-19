@@ -44,6 +44,18 @@
   padding-top: 16px;
 }
 
+.pd-t-8px {
+  padding-top: 8px;
+}
+
+.pd-b-8px {
+  padding-bottom: 8px;
+}
+
+.pd-b-16px {
+  padding-bottom: 16px;
+}
+
 .margin-tb-16px {
   margin-top: 16px;
   margin-bottom: 16px;

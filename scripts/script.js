@@ -39,11 +39,11 @@ function addToBasket(elementId) {
 
   if (isContainedInBasket(dishObject) == true) {
     setCounterUp(dishObject);
+    renderBasket();
     calculateSums();
   } else {
     basketDishes.push(dishObject);
-    setCounterUp(dishObject);
-    putDishToBasket(dishObject);
+    renderBasket();
     calculateSums();
   }
 }
@@ -69,12 +69,22 @@ function putDishToBasket(dishObject) {
   basketContentref.innerHTML += getBasketDishTemplate(dishObject);
 }
 
-function setCounterUp(elementId) {}
+function setCounterUp(dishObject) {
+  dishObject.quantity = dishObject.quantity + 1;
+}
 
 function setCounterDown(elementId) {}
 
 function deleteFromBasket(elementId) {}
 
-function renderBasket() {}
+function renderBasket() {
+  let basketContentRef = document.getElementById("basket-dishes");
+  basketContentRef.innerHTML = "";
+  for (let indexDish = 0; indexDish < basketDishes.length; indexDish++) {
+    basketContentRef.innerHTML += getBasketDishTemplate(
+      basketDishes[indexDish]
+    );
+  }
+}
 
 function calculateSums() {}
