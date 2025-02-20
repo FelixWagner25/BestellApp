@@ -64,26 +64,38 @@ function isContainedInBasket(dishObject) {
   }
 }
 
-function putDishToBasket(dishObject) {
-  let basketContentref = document.getElementById("basket-dishes");
-  basketContentref.innerHTML += getBasketDishTemplate(dishObject);
-}
-
 function setCounterUp(dishObject) {
   dishObject.quantity = dishObject.quantity + 1;
 }
 
-function setCounterDown(elementId) {}
+function setCounterDown(dishObject) {
+  if (dishObject.quantity > 1) {
+    dishObject.quantity = dishObject.quantity - 1;
+  } else {
+    deleteFromBasket(dishObject);
+  }
+}
 
-function deleteFromBasket(elementId) {}
+function addInBasket(indexBasketDish) {
+  setCounterUp(basketDishes[indexBasketDish]);
+  renderBasket();
+}
+
+function removeFromBasket(indexBasketDish) {
+  setCounterDown(basketDishes[indexBasketDish]);
+  renderBasket();
+}
+
+function deleteFromBasket(indexBasketDish) {
+  basketDishes.pop(basketDishes[indexBasketDish]);
+  renderBasket();
+}
 
 function renderBasket() {
   let basketContentRef = document.getElementById("basket-dishes");
   basketContentRef.innerHTML = "";
   for (let indexDish = 0; indexDish < basketDishes.length; indexDish++) {
-    basketContentRef.innerHTML += getBasketDishTemplate(
-      basketDishes[indexDish]
-    );
+    basketContentRef.innerHTML += getBasketDishTemplate(indexDish);
   }
 }
 

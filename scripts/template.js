@@ -53,21 +53,23 @@ function replaceDotWithComma(decimalDotsStr) {
   return decimalCommaStr;
 }
 
-function getBasketDishTemplate(dishObject) {
+function getBasketDishTemplate(indexDish) {
   return `
     <section class="basket-dish pd-lr-small">
-        <h3 class="pd-b-8px pd-t-16px">${dishObject.name}</h3>
+        <h3 class="pd-b-8px pd-t-16px">${basketDishes[indexDish].name}</h3>
         <div class="basket-content">
         <div class="basket-add-remove">
-            <button class="basket-btn">
+            <button class="basket-btn" onclick="addInBasket(${indexDish})">
             <img
                 src="./assets/icons/add.png"
                 alt="plus"
                 class="basket-btn-img"
             />
             </button>
-            <span class="basket-counter">${dishObject.quantity} x</span>
-            <button class="basket-btn">
+            <span class="basket-counter">${
+              basketDishes[indexDish].quantity
+            } x</span>
+            <button class="basket-btn" onclick="removeFromBasket(${indexDish})">
             <img
                 src="./assets/icons/remove.png"
                 alt="minus"
@@ -76,9 +78,9 @@ function getBasketDishTemplate(dishObject) {
             </button>
         </div>
         <div class="basket-dish-sum">${getPriceTemplate(
-          dishObject.price
+          basketDishes[indexDish].price
         )} €</div>
-        <button class="basket-btn">
+        <button class="basket-btn" onclick="deleteFromBasket(${indexDish})">
             <img
             src="./assets/icons/delete.png"
             alt="trash"
