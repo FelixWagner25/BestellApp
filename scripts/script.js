@@ -40,11 +40,11 @@ function addToBasket(elementId) {
   if (isContainedInBasket(dishObject) == true) {
     setCounterUp(dishObject);
     renderBasket();
-    calculateSums();
+    renderTotals();
   } else {
     basketDishes.push(dishObject);
     renderBasket();
-    calculateSums();
+    renderTotals();
   }
 }
 
@@ -79,16 +79,19 @@ function setCounterDown(dishObject) {
 function addInBasket(indexBasketDish) {
   setCounterUp(basketDishes[indexBasketDish]);
   renderBasket();
+  renderTotals();
 }
 
 function removeFromBasket(indexBasketDish) {
   setCounterDown(basketDishes[indexBasketDish]);
   renderBasket();
+  renderTotals();
 }
 
 function deleteFromBasket(indexBasketDish) {
   basketDishes.pop(basketDishes[indexBasketDish]);
   renderBasket();
+  renderTotals();
 }
 
 function renderBasket() {
@@ -99,4 +102,45 @@ function renderBasket() {
   }
 }
 
-function calculateSums() {}
+function renderTotals() {
+  let subTotal = calculateSubtotal();
+  let total = calculateTotal();
+  let deliveryFee = setDisplayedDeliveryFee();
+
+  let totalsContentRef = document.getElementById("basket-totals");
+  totalsContentRef.innerHTML = "";
+  totalsContentRef.innerHTML = getTotalsTemplate(subTotal, total, deliveryFee);
+}
+
+function calculateSubtotal() {
+  let subTotal = 0;
+  for (let indexDish = 0; indexDish < basketDishes.length; indexDish++) {
+    subTotal =
+      subTotal +
+      basketDishes[indexDish].price * basketDishes[indexDish].quantity;
+  }
+  return subTotal;
+}
+
+function calculateTotal() {
+  let total = 0;
+  let subTotal = calculateSubtotal();
+
+  if (subTotal == 0) {
+    total = 0;
+  } else {
+    total = subTotal + deliveryFee;
+  }
+  return total;
+}
+
+function setDisplayedDeliveryFee() {
+  let displayedDeliveryFee = deliveryFee;
+  let subTotal = calculateSubtotal();
+
+  if (subTotal == 0) {
+    displayedDeliveryFee = 0;
+  }
+
+  return displayedDeliveryFee;
+}

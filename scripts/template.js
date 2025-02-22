@@ -78,7 +78,7 @@ function getBasketDishTemplate(indexDish) {
             </button>
         </div>
         <div class="basket-dish-sum">${getPriceTemplate(
-          basketDishes[indexDish].price
+          basketDishes[indexDish].price * basketDishes[indexDish].quantity
         )} €</div>
         <button class="basket-btn" onclick="deleteFromBasket(${indexDish})">
             <img
@@ -89,5 +89,24 @@ function getBasketDishTemplate(indexDish) {
         </button>
         </div>
     </section>
+`;
+}
+
+function getTotalsTemplate(subTotal, total, deliveryFee) {
+  return `
+  <div class="subtotal-span pd-lr-small pd-tb-16px">
+  <div class="subtotal">
+    <p>Zwischensumme:</p>
+    <p>Lieferung:</p>
+  </div>
+  <div class="subtotal-amounts">
+    <p>${getPriceTemplate(subTotal)} €</p>
+    <p>${getPriceTemplate(deliveryFee)} €</p>
+  </div>
+</div>
+<div class="total pd-lr-small">
+  <p>Gesamt</p>
+  <p>${getPriceTemplate(total)}€</p>
+</div>
 `;
 }
