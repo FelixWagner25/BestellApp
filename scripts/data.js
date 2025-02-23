@@ -75,6 +75,4 @@ let dessertDishes = [
 
 let basketDishes = [];
 
-let subTotal = 0;
 let deliveryFee = 5;
-let total = 0;

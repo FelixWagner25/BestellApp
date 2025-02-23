@@ -98,8 +98,9 @@ h2 {
 }
 
 .basket {
-  height: 100vh;
+  height: calc(100vh-160px);
   position: sticky;
+  top: 0;
 }
 
 .dish-section-img {
