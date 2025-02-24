@@ -162,7 +162,7 @@ hr {
   border: 1px solid rgb(197, 197, 197);
 }
 
-.resp-basket-span {
+.resp-basket-btn-span {
   background-color: white;
   position: sticky;
   bottom: 0px;
@@ -191,7 +191,16 @@ hr {
   .basket-span {
     display: none;
   }
-  .resp-basket-span {
+  .resp-basket-btn-span {
     display: block;
+  }
+}
+
+@media (max-width: 440px) {
+  .add-more-btn {
+    font-size: 16px;
+  }
+  .nav-bar {
+    display: none;
   }
 }

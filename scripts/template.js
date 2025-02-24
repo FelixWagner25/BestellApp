@@ -106,7 +106,7 @@ function getTotalsTemplate(subTotal, total, deliveryFee) {
 </div>
 <div class="total pd-lr-small">
   <p>Gesamt</p>
-  <p>${getPriceTemplate(total)}€</p>
+  <p>${getPriceTemplate(total)} €</p>
 </div>
 `;
 }

@@ -39,13 +39,18 @@ function addToBasket(elementId) {
 
   if (isContainedInBasket(dishObject) == true) {
     setCounterUp(dishObject);
-    renderBasket("basket-dishes");
-    renderTotals("basket-totals");
+    renderAllBasketsAndTotals();
   } else {
     basketDishes.push(dishObject);
-    renderBasket("basket-dishes");
-    renderTotals("basket-totals");
+    renderAllBasketsAndTotals();
   }
+}
+
+function renderAllBasketsAndTotals() {
+  renderBasket("basket-dishes");
+  renderTotals("basket-totals");
+  renderBasket("resp-basket-dishes");
+  renderTotals("resp-basket-totals");
 }
 
 function getDishObject(elementId) {
@@ -78,20 +83,17 @@ function setCounterDown(dishObject) {
 
 function addInBasket(indexBasketDish) {
   setCounterUp(basketDishes[indexBasketDish]);
-  renderBasket("basket-dishes");
-  renderTotals("basket-totals");
+  renderAllBasketsAndTotals();
 }
 
 function removeFromBasket(indexBasketDish) {
   setCounterDown(basketDishes[indexBasketDish]);
-  renderBasket("basket-dishes");
-  renderTotals("basket-totals");
+  renderAllBasketsAndTotals();
 }
 
 function deleteFromBasket(indexBasketDish) {
   basketDishes.pop(basketDishes[indexBasketDish]);
-  renderBasket("basket-dishes");
-  renderTotals("basket-totals");
+  renderAllBasketsAndTotals();
 }
 
 function renderBasket(elementId) {
@@ -145,4 +147,18 @@ function setDisplayedDeliveryFee() {
   return displayedDeliveryFee;
 }
 
-function openRespBasket() {}
+function openRespBasket() {
+  contentRef = document.getElementById("content-span");
+  respBaketRef = document.getElementById("resp-basket");
+  contentRef.style.display = "none";
+  respBaketRef.style.display = "block";
+  renderBasket("resp-basket-dishes");
+  renderTotals("resp-basket-totals");
+}
+
+function backToHome() {
+  contentRef = document.getElementById("content-span");
+  respBaketRef = document.getElementById("resp-basket");
+  contentRef.style.display = "flex";
+  respBaketRef.style.display = "none";
+}

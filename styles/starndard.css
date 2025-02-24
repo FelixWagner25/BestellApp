@@ -49,6 +49,10 @@
   padding-top: 8px;
 }
 
+.pd-t-48px {
+  padding-top: 48px;
+}
+
 .pd-b-8px {
   padding-bottom: 8px;
 }
@@ -65,4 +69,10 @@
 .margin-tb-8px {
   margin-top: 8px;
   margin-bottom: 8px;
+}
+
+.d-flex-col-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }

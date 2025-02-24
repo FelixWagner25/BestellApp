@@ -39,7 +39,7 @@
         </div>
       </div>
     </header>
-    <section class="content-span">
+    <section class="content-span" id="content-span">
       <section class="content">
         <img
           src="./assets/img/pizza-wallpaper.webp"
@@ -124,15 +124,40 @@
           </div>
         </div>
       </section>
-      <div class="resp-basket-span">
+      <div class="resp-basket-btn-span">
         <button class="resp-basket-btn" onclick="openRespBasket()">
           Warenkorb
         </button>
       </div>
     </section>
-    <section class="resp-basket">
-      <h1 class="pd-tb-16px">Warenkorb</h1>
-      <hr />
+    <section class="resp-basket pd-lr-deflt" id="resp-basket">
+      <div class="d-flex-col-center">
+        <h1 class="pd-tb-16px">Warenkorb</h1>
+      </div>
+      <hr class="hr-basket" />
+      <div id="resp-basket-totals">
+        <div class="subtotal-span pd-lr-small pd-tb-16px">
+          <div class="subtotal">
+            <p>Zwischensumme:</p>
+            <p>Lieferung:</p>
+          </div>
+          <div class="subtotal-amounts">
+            <p>0,00 €</p>
+            <p>0,00 €</p>
+          </div>
+        </div>
+        <div class="total pd-lr-small">
+          <p>Gesamt</p>
+          <p>0,00 €</p>
+        </div>
+      </div>
+      <hr class="hr-basket" />
+      <div id="resp-basket-dishes" class="pd-tb-16px"></div>
+      <div class="add-more-btn-span">
+        <button class="add-more-btn" onclick="backToHome()">
+          Weitere Produkte hinzufügen
+        </button>
+      </div>
     </section>
     <footer>
       <div class="center-content">
