@@ -39,12 +39,12 @@ function addToBasket(elementId) {
 
   if (isContainedInBasket(dishObject) == true) {
     setCounterUp(dishObject);
-    renderBasket();
-    renderTotals();
+    renderBasket("basket-dishes");
+    renderTotals("basket-totals");
   } else {
     basketDishes.push(dishObject);
-    renderBasket();
-    renderTotals();
+    renderBasket("basket-dishes");
+    renderTotals("basket-totals");
   }
 }
 
@@ -78,36 +78,36 @@ function setCounterDown(dishObject) {
 
 function addInBasket(indexBasketDish) {
   setCounterUp(basketDishes[indexBasketDish]);
-  renderBasket();
-  renderTotals();
+  renderBasket("basket-dishes");
+  renderTotals("basket-totals");
 }
 
 function removeFromBasket(indexBasketDish) {
   setCounterDown(basketDishes[indexBasketDish]);
-  renderBasket();
-  renderTotals();
+  renderBasket("basket-dishes");
+  renderTotals("basket-totals");
 }
 
 function deleteFromBasket(indexBasketDish) {
   basketDishes.pop(basketDishes[indexBasketDish]);
-  renderBasket();
-  renderTotals();
+  renderBasket("basket-dishes");
+  renderTotals("basket-totals");
 }
 
-function renderBasket() {
-  let basketContentRef = document.getElementById("basket-dishes");
+function renderBasket(elementId) {
+  let basketContentRef = document.getElementById(elementId);
   basketContentRef.innerHTML = "";
   for (let indexDish = 0; indexDish < basketDishes.length; indexDish++) {
     basketContentRef.innerHTML += getBasketDishTemplate(indexDish);
   }
 }
 
-function renderTotals() {
+function renderTotals(elementId) {
   let subTotal = calculateSubtotal();
   let total = calculateTotal();
   let deliveryFee = setDisplayedDeliveryFee();
 
-  let totalsContentRef = document.getElementById("basket-totals");
+  let totalsContentRef = document.getElementById(elementId);
   totalsContentRef.innerHTML = "";
   totalsContentRef.innerHTML = getTotalsTemplate(subTotal, total, deliveryFee);
 }
@@ -144,3 +144,5 @@ function setDisplayedDeliveryFee() {
 
   return displayedDeliveryFee;
 }
+
+function openRespBasket() {}
