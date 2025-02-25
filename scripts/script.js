@@ -1,14 +1,3 @@
-// Funktionalitäten
-// Bestellen-Button: Meldung, dass Bestellung vorgenommen wurde; kein Alert!. Leerung des Warenkorbs.
-//
-// Code
-// Aussagekräftige Namen für Fkt und Variablen
-// camelCase
-// Formatierung
-// Höchstens 14 Zeilen pro Fkt.
-// Gleicher Abstand zwischen Fkt (1 oder 2 Leerzeichen).
-// Lange HTML-templates ind extra Funktionen
-
 function init() {
   loadDishes("starter-dishes");
   loadDishes("main-dishes");
