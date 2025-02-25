@@ -39,6 +39,14 @@
         </div>
       </div>
     </header>
+    <div class="d-flex-row-center">
+      <div class="success-message" id="success-message">
+        Deine Testbestellung wurde erfolgreich abgeschickt!
+        <button onclick="closeMessage('success-message')" class="close-message">
+          x
+        </button>
+      </div>
+    </div>
     <section class="content-span" id="content-span">
       <section class="content">
         <img
@@ -123,7 +131,9 @@
             </div>
           </div>
           <div class="order-btn-span">
-            <button class="order-bnt">Bestellung abschicken</button>
+            <button class="order-bnt" onclick="placeOrder()">
+              Bestellung abschicken
+            </button>
           </div>
         </div>
       </section>
@@ -156,7 +166,9 @@
       </div>
       <hr class="hr-basket" />
       <div class="order-btn-span">
-        <button class="order-bnt">Bestellung abschicken</button>
+        <button class="order-bnt" onclick="placeOrder()">
+          Bestellung abschicken
+        </button>
       </div>
       <div id="resp-basket-dishes" class="pd-tb-16px"></div>
       <div class="add-more-btn-span">

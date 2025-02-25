@@ -167,3 +167,23 @@ function renderSubmitBtn() {
     }
   }
 }
+
+function placeOrder() {
+  emptyBasket();
+  renderAllBasketsAndTotals();
+  showSuccessMessage();
+}
+
+function emptyBasket() {
+  basketDishes = [];
+}
+
+function showSuccessMessage() {
+  let messageRef = document.getElementById("success-message");
+  messageRef.style.display = "block";
+}
+
+function closeMessage(elementId) {
+  let messageRef = document.getElementById(elementId);
+  messageRef.style.display = "none";
+}
