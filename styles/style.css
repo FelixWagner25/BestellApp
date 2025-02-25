@@ -240,6 +240,12 @@ hr {
   cursor: pointer;
 }
 
+@media (max-width: 1400px) {
+  .resp-basket-btn-span {
+    display: none;
+  }
+}
+
 @media (max-width: 800px) {
   .content-span {
     flex-direction: column;

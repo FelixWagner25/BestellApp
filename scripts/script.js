@@ -146,7 +146,7 @@ function backToHome() {
   contentRef.style.display = "block";
   contentSpanRef.style.alignItems = "";
   respBasketRef.style.display = "none";
-  respBasketBtnRef.style.display = "block";
+  respBasketBtnRef.style.display = "";
 }
 
 function renderSubmitBtn() {
