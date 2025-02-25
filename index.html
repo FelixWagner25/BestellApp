@@ -7,7 +7,6 @@
     <link rel="stylesheet" href="./styles/style.css" />
     <link rel="stylesheet" href="./styles/assets.css" />
     <link rel="stylesheet" href="./styles/basket.css" />
-    <link rel="stylesheet" href="./styles/resp-basket.css" />
     <link rel="icon" href="./assets/icons/favicon.ico" type="image/x-icon" />
     <script src="./scripts/data.js" defer></script>
     <script src="./scripts/template.js" defer></script>
@@ -26,16 +25,8 @@
         </div>
       </div>
     </header>
-    <div class="d-flex-row-center pd-lr-deflt">
-      <div class="success-message" id="success-message">
-        Deine Testbestellung wurde erfolgreich abgeschickt!
-        <button onclick="closeMessage('success-message')" class="close-message">
-          x
-        </button>
-      </div>
-    </div>
     <section class="content-span" id="content-span">
-      <section class="content">
+      <section class="content" id="content">
         <img
           src="./assets/img/pizza-wallpaper.webp"
           alt="Background image pizza"
@@ -95,10 +86,10 @@
           </div>
         </section>
       </section>
-      <section class="basket-span">
-        <div class="basket">
+      <section class="basket-span" id="basket-span">
+        <div class="basket" id="basket">
           <h1 class="center pd-tb-16px">Warenkorb</h1>
-          <hr />
+          <hr class="hr-basket" />
           <div id="basket-dishes" class="pd-tb-16px"></div>
           <hr class="hr-basket" />
           <div id="basket-totals">
@@ -117,53 +108,32 @@
               <p>0,00 €</p>
             </div>
           </div>
-          <div class="order-btn-span">
+          <div id="order-btn" class="order-btn-span">
             <button class="order-bnt" onclick="placeOrder()">
               Bestellung abschicken
             </button>
           </div>
+          <div class="add-more-btn-span" id="add-more-btn-span">
+            <button class="add-more-btn" onclick="backToHome()">
+              Weitere Produkte hinzufügen
+            </button>
+          </div>
         </div>
       </section>
-      <div class="resp-basket-btn-span">
+      <div class="resp-basket-btn-span" id="resp-basket-btn-span">
         <button class="resp-basket-btn" onclick="openRespBasket()">
           Warenkorb
         </button>
       </div>
     </section>
-    <section class="resp-basket pd-lr-deflt" id="resp-basket">
-      <div class="d-flex-col-center">
-        <h1 class="pd-tb-16px">Warenkorb</h1>
-      </div>
-      <hr class="hr-basket" />
-      <div id="resp-basket-totals">
-        <div class="subtotal-span pd-lr-small pd-tb-16px">
-          <div class="subtotal">
-            <p>Zwischensumme:</p>
-            <p>Lieferung:</p>
-          </div>
-          <div class="subtotal-amounts">
-            <p>0,00 €</p>
-            <p>0,00 €</p>
-          </div>
-        </div>
-        <div class="total pd-lr-small">
-          <p>Gesamt</p>
-          <p>0,00 €</p>
-        </div>
-      </div>
-      <hr class="hr-basket" />
-      <div class="order-btn-span">
-        <button class="order-bnt" onclick="placeOrder()">
-          Bestellung abschicken
+    <div class="d-flex-row-center pd-lr-deflt">
+      <div class="success-message" id="success-message">
+        Deine Testbestellung wurde erfolgreich abgeschickt!
+        <button onclick="closeMessage('success-message')" class="close-message">
+          x
         </button>
       </div>
-      <div id="resp-basket-dishes" class="pd-tb-16px"></div>
-      <div class="add-more-btn-span">
-        <button class="add-more-btn" onclick="backToHome()">
-          Weitere Produkte hinzufügen
-        </button>
-      </div>
-    </section>
+    </div>
     <footer>
       <div class="center-content">
         <div class="max-width-1440px"></div>

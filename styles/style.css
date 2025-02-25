@@ -244,7 +244,7 @@ hr {
   .content-span {
     flex-direction: column;
   }
-  .basket-span {
+  .basket {
     display: none;
   }
   .resp-basket-btn-span {
@@ -253,9 +253,6 @@ hr {
 }
 
 @media (max-width: 440px) {
-  .add-more-btn {
-    font-size: 16px;
-  }
   .nav-bar {
     display: none;
   }

@@ -26,8 +26,6 @@ function addToBasket(elementId) {
 function renderAllBasketsAndTotals() {
   renderBasket("basket-dishes");
   renderTotals("basket-totals");
-  renderBasket("resp-basket-dishes");
-  renderTotals("resp-basket-totals");
   renderSubmitBtn();
 }
 
@@ -126,34 +124,38 @@ function setDisplayedDeliveryFee() {
 }
 
 function openRespBasket() {
-  contentRef = document.getElementById("content-span");
-  respBaketRef = document.getElementById("resp-basket");
+  contentRef = document.getElementById("content");
+  contentSpanRef = document.getElementById("content-span");
+  respBasketRef = document.getElementById("basket");
+  respBasketBtnRef = document.getElementById("resp-basket-btn-span");
+  addMoreBtnRef = document.getElementById("add-more-btn-span");
+
   contentRef.style.display = "none";
-  respBaketRef.style.display = "block";
-  renderBasket("resp-basket-dishes");
-  renderTotals("resp-basket-totals");
+  contentSpanRef.style.alignItems = "center";
+  respBasketRef.style.display = "block";
+  respBasketBtnRef.style.display = "none";
+  addMoreBtnRef.style.display = "block";
 }
 
 function backToHome() {
-  contentRef = document.getElementById("content-span");
-  respBaketRef = document.getElementById("resp-basket");
-  contentRef.style.display = "flex";
-  respBaketRef.style.display = "none";
+  contentRef = document.getElementById("content");
+  contentSpanRef = document.getElementById("content-span");
+  respBasketRef = document.getElementById("basket");
+  respBasketBtnRef = document.getElementById("resp-basket-btn-span");
+
+  contentRef.style.display = "block";
+  contentSpanRef.style.alignItems = "";
+  respBasketRef.style.display = "none";
+  respBasketBtnRef.style.display = "block";
 }
 
 function renderSubmitBtn() {
-  let submitBtnRefs = document.getElementsByClassName("order-btn-span");
+  let submitBtnRef = document.getElementById("order-btn");
 
-  for (
-    let indexElement = 0;
-    indexElement < submitBtnRefs.length;
-    indexElement++
-  ) {
-    if (basketDishes.length == 0) {
-      submitBtnRefs[indexElement].style.display = "none";
-    } else {
-      submitBtnRefs[indexElement].style.display = "block";
-    }
+  if (basketDishes.length == 0) {
+    submitBtnRef.style.display = "none";
+  } else {
+    submitBtnRef.style.display = "block";
   }
 }
 
