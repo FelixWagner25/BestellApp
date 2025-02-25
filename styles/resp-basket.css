@@ -24,6 +24,7 @@
 
 .add-more-btn:hover {
   background-color: #fa9d40;
+  cursor: pointer;
 }
 
 @media (max-width: 480px) {

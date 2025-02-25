@@ -24,35 +24,6 @@ function getDishTemplate(indexDish, arrayElementId) {
     `;
 }
 
-function getArrayByElementId(elementId) {
-  let selectedArray = [];
-  if (elementId == "starter-dishes") {
-    selectedArray = starterDishes;
-  } else if (elementId == "main-dishes") {
-    selectedArray = mainDishes;
-  } else if (elementId == "dessert-dishes") {
-    selectedArray = dessertDishes;
-  }
-
-  return selectedArray;
-}
-
-function getPriceTemplate(priceNumber) {
-  let priceNumberStr = String(priceNumber.toFixed(2));
-  priceNumberStr = replaceDotWithComma(priceNumberStr);
-  return priceNumberStr;
-}
-
-function roundToTowDigets(number) {
-  let roundedNumber = number.toFixed(2);
-  return roundedNumber;
-}
-
-function replaceDotWithComma(decimalDotsStr) {
-  let decimalCommaStr = decimalDotsStr.replace(".", ",");
-  return decimalCommaStr;
-}
-
 function getBasketDishTemplate(indexDish) {
   return `
     <section class="basket-dish pd-lr-small">
