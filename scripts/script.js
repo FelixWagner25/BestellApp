@@ -142,11 +142,13 @@ function backToHome() {
   contentSpanRef = document.getElementById("content-span");
   respBasketRef = document.getElementById("basket");
   respBasketBtnRef = document.getElementById("resp-basket-btn-span");
+  addMoreBtnRef = document.getElementById("add-more-btn-span");
 
   contentRef.style.display = "block";
   contentSpanRef.style.alignItems = "";
-  respBasketRef.style.display = "none";
+  respBasketRef.style.display = "";
   respBasketBtnRef.style.display = "";
+  addMoreBtnRef.style.display = "";
 }
 
 function renderSubmitBtn() {
