@@ -1,17 +1,5 @@
 // Funktionalitäten
-// Gerichte hinzufügen durch klicken auf Plus Symbol am rechten oberen Rand
-// Gerichte hinzufügen, wenn sie im Warenkorb sind
-// Gerichtemenge reduzieren, wenn sie im Warenkorb sind
-// Mengengerechte Preisberechnung
-// Gericht löschen im Warenkorb
-// Berechnung Zwischensumme
-// Berechnung Lieferkosten
-// Berechnung Gesamtsumme
-// Schalter mit Lieferung oder Selbstabholung
 // Bestellen-Button: Meldung, dass Bestellung vorgenommen wurde; kein Alert!. Leerung des Warenkorbs.
-// Auch wenn alle Gerichte ausgewählt werde, darf der Warenkorb nicht "überlaufen"
-// Der Desktop-Warenkorb sollte immer oben an der Seite angeheftet sein, außer wenn man ganz oben oder zanb unten auf der Seite ist.
-// Meine Präferenz: Warenkorb bekommt eigene Datenstruktur.
 //
 // Code
 // Aussagekräftige Namen für Fkt und Variablen
@@ -51,6 +39,7 @@ function renderAllBasketsAndTotals() {
   renderTotals("basket-totals");
   renderBasket("resp-basket-dishes");
   renderTotals("resp-basket-totals");
+  renderSubmitBtn();
 }
 
 function getDishObject(elementId) {
@@ -161,4 +150,20 @@ function backToHome() {
   respBaketRef = document.getElementById("resp-basket");
   contentRef.style.display = "flex";
   respBaketRef.style.display = "none";
+}
+
+function renderSubmitBtn() {
+  let submitBtnRefs = document.getElementsByClassName("order-btn-span");
+
+  for (
+    let indexElement = 0;
+    indexElement < submitBtnRefs.length;
+    indexElement++
+  ) {
+    if (basketDishes.length == 0) {
+      submitBtnRefs[indexElement].style.display = "none";
+    } else {
+      submitBtnRefs[indexElement].style.display = "block";
+    }
+  }
 }
