@@ -49,11 +49,11 @@ function setCounterUp(dishObject) {
   dishObject.quantity = dishObject.quantity + 1;
 }
 
-function setCounterDown(dishObject) {
-  if (dishObject.quantity > 1) {
-    dishObject.quantity = dishObject.quantity - 1;
+function setCounterDown(indexObject) {
+  if (basketDishes[indexObject].quantity > 1) {
+    basketDishes[indexObject].quantity = basketDishes[indexObject].quantity - 1;
   } else {
-    deleteFromBasket(dishObject);
+    deleteFromBasket(indexObject);
   }
 }
 
@@ -63,12 +63,12 @@ function addInBasket(indexBasketDish) {
 }
 
 function removeFromBasket(indexBasketDish) {
-  setCounterDown(basketDishes[indexBasketDish]);
+  setCounterDown(indexBasketDish);
   renderAllBasketsAndTotals();
 }
 
-function deleteFromBasket(indexBasketDish) {
-  basketDishes.pop(basketDishes[indexBasketDish]);
+function deleteFromBasket(indexObject) {
+  basketDishes.splice(indexObject, 1);
   renderAllBasketsAndTotals();
 }
 
